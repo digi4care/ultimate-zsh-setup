@@ -35,7 +35,8 @@ refresh_command_cache() {
 # Functie om cache te laden
 load_command_cache() {
   if file_exists "$CACHE_FILE"; then
-    mapfile -t found_commands < "$CACHE_FILE"
+    # mapfile -t found_commands < "$CACHE_FILE"
+    found_commands=("${(@f)$(<"$CACHE_FILE")}")
   else
     found_commands=()
     local commands=($SEARCH_APPS)
@@ -75,6 +76,14 @@ if command_exists git; then
   }
 
 fi
+
+add_to_path() {
+  local dir="$1" # Store the directory in a local variable
+  case ":$PATH:" in
+  *":$dir:"*) ;;                 # Do nothing if the path is already in PATH
+  *) export PATH="$dir:$PATH" ;; # Add the path if it's not already in PATH
+  esac
+}
 
 viewip () {
   sudo netstat -anpl | grep :80 | awk '{print $5}' | cut -d":" -f1 | sort | uniq -c | sort -n | sed -e 's/^ *//' -e 's/ *$//'
@@ -280,7 +289,7 @@ install_zshrc_support () {
       sudo urpmi multitail tree joe exa bat libnotify-bin nano vi vim pico code net-tools wget fzf zoxide curl
       ;;
     ubuntu)
-      sudo apt install multitail tree joe bat libnotify-bin nano vim code net-tools wget fzf zoxide curl
+      sudo apt install multitail tree joe eza bat libnotify-bin nano vim code net-tools wget fzf zoxide curl ssh-askpass
       ;;
     arch)
       sudo pacman -S multitail tree joe exa bat libnotify nano vi vim pico code net-tools wget fzf zoxide curl

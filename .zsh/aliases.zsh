@@ -40,6 +40,7 @@ alias saptr='sudo apt remove'
 alias saptg='sudo apt-get'
 
 # Directory navigation
+# alias cd='zoxide'
 alias home='cd ~'
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -123,21 +124,21 @@ alias iop="npx @squoosh/cli --oxipng auto "
 
 alias freshclam='sudo freshclam'
 
-# Directory listing with exa
-alias la='exa -al --long --header --group-directories-first'
-alias ls='exa -a --classify --color=always --group-directories-first'
-alias lx='exa -al --long --header --group-directories-first --sort=extension'
-alias lk='exa -al --long --header --group-directories-first --sort=size --reverse'
-alias lc='exa -al --long --header --group-directories-first --sort=changed --reverse'
-alias lu='exa -al --long --header --group-directories-first --sort=accessed --reverse'
-alias lr='exa -al --long --header --group-directories-first --recurse'
-alias lt='exa -al --long --header --group-directories-first --sort=modified --reverse'
-alias lm='exa -al --long --header --group-directories-first | more'
-alias lw='exa -al --long --header --group-directories-first --grid --across'
-alias ll='exa -al --long --header --group-directories-first'
-alias labc='exa -al --long --header --group-directories-first --sort=alphabetical'
-alias lf="exa -al --long --header --group-directories-first --no-dirs"
-alias ldir="exa -al --long --header --group-directories-first --dirs-only"
+# Directory listing with eza
+alias la='eza -al --long --header --group-directories-first'
+alias ls='eza -a --classify --color=always --group-directories-first'
+alias lx='eza -al --long --header --group-directories-first --sort=extension'
+alias lk='eza -al --long --header --group-directories-first --sort=size --reverse'
+alias lc='eza -al --long --header --group-directories-first --sort=changed --reverse'
+alias lu='eza -al --long --header --group-directories-first --sort=accessed --reverse'
+alias lr='eza -al --long --header --group-directories-first --recurse'
+alias lt='eza -al --long --header --group-directories-first --sort=modified --reverse'
+alias lm='eza -al --long --header --group-directories-first | more'
+alias lw='eza -al --long --header --group-directories-first --grid --across'
+alias ll='eza -al --long --header --group-directories-first'
+alias labc='eza -al --long --header --group-directories-first --sort=alphabetical'
+alias lf="eza -al --long --header --group-directories-first --no-dirs"
+alias ldir="eza -al --long --header --group-directories-first --dirs-only"
 
 # Batcat aliases
 alias cat='batcat --style=plain'

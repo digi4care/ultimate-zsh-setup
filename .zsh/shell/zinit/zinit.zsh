@@ -1,5 +1,9 @@
 # shell/zinit.zsh
 
+if [[ ! -d "$HOME/.cache/zinit/completions" ]]; then
+  mkdir -p "$HOME/.cache/zinit/completions"
+fi
+
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 if [[ ! -d "$ZINIT_HOME" ]]; then
