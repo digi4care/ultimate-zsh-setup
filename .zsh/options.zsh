@@ -1,6 +1,3 @@
-# Disable XON/XOFF flow control to free Ctrl-S and Ctrl-Q
-stty -ixon
-
 # Zsh opties
 setopt AUTO_CD
 setopt GLOB_DOTS
